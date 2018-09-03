@@ -48,7 +48,6 @@ public class ContactsPageTest extends TestBase{
 		contactsPage.selectContacts("Al Ravi");
 	}
 	
-	
 	@Test(priority=3)
 	public void multipleContactsTest(){
 		contactsPage.selectContacts("Al Ravi");
