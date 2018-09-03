@@ -31,6 +31,7 @@ public class ContactsPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		testUtil= new TestUtil();
+		
 		contactsPage= new ContactsPage();
 		homePage= loginPage.login(properties.getProperty("username"), properties.getProperty("password"));
 		testUtil.switchToFrame();
@@ -52,6 +53,7 @@ public class ContactsPageTest extends TestBase{
 	public void multipleContactsTest(){
 		contactsPage.selectContacts("Al Ravi");
 		contactsPage.selectContacts("Anil Kumar");
+		contactsPage.selectContacts("Anil");
 	}
 	
 	
