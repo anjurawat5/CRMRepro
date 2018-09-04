@@ -11,7 +11,7 @@ import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
-@Listeners
+@Listeners(com.crm.qa.ExtentReportListener.CRMListener.class)				
 public class HomePageTest extends TestBase {
 
 	LoginPage loginPage;
@@ -34,7 +34,7 @@ public class HomePageTest extends TestBase {
 	@Test(priority=1)
 	public void verifyHomePageTitleTest(){
 		String title= homePage.verifyHomePageTitle();
-		Assert.assertEquals(title, "CRMPRO");
+		Assert.assertEquals(title, "CRMPRO11");
 	}
 
 	@Test(priority=2)

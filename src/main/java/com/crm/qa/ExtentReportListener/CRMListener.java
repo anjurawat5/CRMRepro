@@ -1,5 +1,7 @@
 package com.crm.qa.ExtentReportListener;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -21,7 +23,12 @@ public class CRMListener extends TestBase implements ITestListener{
 
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test is fail");
-		TestUtil.takeScreenshot();
+		try {
+			TestUtil.takeScreenshot(result.getMethod().getMethodName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

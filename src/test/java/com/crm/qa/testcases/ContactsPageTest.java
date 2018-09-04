@@ -14,7 +14,7 @@ import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
-@Listeners
+@Listeners(com.crm.qa.ExtentReportListener.CRMListener.class)				
 public class ContactsPageTest extends TestBase{
 	LoginPage loginPage;
 	HomePage homePage;

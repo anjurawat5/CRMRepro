@@ -4,15 +4,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import javax.swing.plaf.FileChooserUI;
-
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.Listeners;
+import org.apache.commons.io.FileUtils;
+
 
 import com.crm.qa.base.TestBase;
-
+@Listeners
 public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT=20;
 	public static long IMPLICIT_WAIT=30;
@@ -40,10 +41,9 @@ public class TestUtil extends TestBase {
 	}
 
 
-	public static void takeScreenshot() {
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//FileUtils.copyFile(scrFile, new File("D:\\Workspace-eclipse\\FreeCRMTest\\Screenshot\\anju.png"));
-
-		driver.quit(); 
+	public static void takeScreenshot(String screenshotName) throws IOException {
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile, new File("D:\\Workspace-eclipse\\FreeCRMTest\\Screenshots\\"+screenshotName+".png"));
+		driver.close();
 	}
 }
